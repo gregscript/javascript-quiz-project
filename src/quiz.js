@@ -41,12 +41,13 @@ class Quiz {
     filterQuestionsByDifficulty(difficulty) {
         if(difficulty >= 1 && difficulty <= 3) {
             this.questions = this.questions.filter(question => question.difficulty === difficulty);
+            // original array needs to be update as "filter" does not modify array but gives new one
         }
     }
     averageDifficulty(){
         let totalDifficulties = this.questions.reduce((acc, question) => {
                                     return acc + question.difficulty;
-                                }, 0)
+                                }, 0) // here I have to pass 0 otherwise I add object as first accumulator
         return totalDifficulties/this.questions.length;
     }   
 }
