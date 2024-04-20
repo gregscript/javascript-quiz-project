@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const choiceContainer = document.querySelector("#choices");
   const nextButton = document.querySelector("#nextButton");
   const restartButton = document.querySelector("#restartButton")
+  const timeRemainingContainer = document.getElementById("timeRemaining");
 
   // End view elements
   const resultContainer = document.querySelector("#result");
@@ -51,14 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /************  SHOW INITIAL CONTENT  ************/
+  let minutes;
+  let seconds;
 
   function updateTime() {
     // Convert the time remaining in seconds to minutes and seconds, and pad the numbers with zeros if needed
-    let minutes = Math.floor(quiz.timeRemaining / 60).toString().padStart(2, "0");
-    let seconds = (quiz.timeRemaining % 60).toString().padStart(2, "0");
+    minutes = Math.floor(quiz.timeRemaining / 60).toString().padStart(2, "0");
+    seconds = (quiz.timeRemaining % 60).toString().padStart(2, "0");
 
     // Display the time remaining in the time remaining container
-    const timeRemainingContainer = document.getElementById("timeRemaining");
     timeRemainingContainer.innerText = `${minutes}:${seconds}`;
   }
   updateTime()
