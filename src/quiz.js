@@ -25,8 +25,8 @@ class Quiz {
             }
     }
 
-    checkAnswer(answer){
-        if(this.questions[this.currentQuestionIndex].answer === answer) {
+    checkAnswer(userAnswer){
+        if(this.questions[this.currentQuestionIndex].answer === userAnswer) {
             this.correctAnswers += 1;
         }
     }
@@ -38,9 +38,9 @@ class Quiz {
             return true;
         }
     }
-    filterQuestionsByDifficulty(difficulty) {
-        if(difficulty >= 1 && difficulty <= 3) {
-            this.questions = this.questions.filter(question => question.difficulty === difficulty);
+    filterQuestionsByDifficulty(userDifficulty) {
+        if(userDifficulty >= 1 && userDifficulty <= 3) {
+            this.questions = this.questions.filter(question => question.difficulty === userDifficulty);
             // original array needs to be update as "filter" does not modify array but gives new one
         }
     }

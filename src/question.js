@@ -18,6 +18,9 @@ class Question {
         [this.choices[i], this.choices[j]] = [this.choices[j], this.choices[i]];
         }
 
+    }
+
+}
 
 // shuffleChoices() method
 
@@ -30,6 +33,3 @@ class Question {
 // should receive no arguments.
 
 // should shuffle the elements stored in the choices array property.
-    }
-
-}
